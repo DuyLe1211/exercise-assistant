@@ -1,0 +1,52 @@
+<div class="ww">
+    <h1 class="text">Đang tải...</h1>
+</div>
+
+<div class="btn-container invisible">
+    <button id="webcamButton" class="mdc-button mdc-button--raised">
+    <span class="mdc-button__ripple"></span>
+    <span class="mdc-button__label">Bật Camera</span>
+    </button>
+</div>
+
+<section id="demos" class="invisible">
+    <div class="container">
+      <div id="liveView" class="videoView">
+        <video id="webcam" style="width: 90%; height: 100%; position: abso" autoplay playsinline></video>
+        <canvas class="output_canvas" id="output_canvas" width="90%" height="100%" style="position: absolute; left: 0px; top: 0px;"></canvas>
+      </div>
+
+      <div class="controller">
+        <div class="counter">
+          <div class="rep-counter"><span class="rep"></span></div>
+          <div class="set-counter"><span class="set"></span></div>
+        </div>
+
+        <div class="status">
+          <div class="status_cur">Bài tâp hiện tại: <span class="cur"></span></div>
+          <div class="status_next">Bài tập tiếp theo: <span class="next"></span></div>
+        </div>
+      </div>
+
+      <div class="info invisible"></div>
+
+      <div class="free invisible"></div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  let data = '{{data}}';
+
+  let set = {{set}};
+  let rep = {{rep}};
+  let free = {{free}};
+  let repElement = document.querySelector('.rep');
+  let setElement = document.querySelector('.set');
+  let freeElement = document.querySelector('.free');
+  repElement.innerHTML = rep;
+  setElement.innerHTML = set;
+  freeElement.innerHTML = free;
+  let infoElement = document.querySelector('.info');
+  infoElement.innerHTML = data;
+</script>

@@ -1,0 +1,33 @@
+<div class="body">
+    <form method="POST" class="form">
+        <div class="root row no-gutters">
+            {{#each poses}}
+                {{#with _doc}}
+                    <div class="root_container">
+                        <input type="checkbox" name="pose[]" id="{{this._id}}" value="{{this._id}}">
+                        <label for="pose[]">{{this.name}}</label>
+                    </div>
+                {{/with}}
+            {{/each}}
+        </div>
+
+        <div class="footer row no-gutters">
+            <div class="footer_box">
+                <label for="set" class="footer_placeholder">Số set mỗi bài:</label>
+                <input name="set" type="number">
+            </div>
+            <div class="footer_box">
+                <label for="rep" class="footer_placeholder">Số rep mỗi set:</label>
+                <input name="rep" type="number">
+            </div>
+            <div class="footer_box">
+                <label for="time" class="footer_placeholder">Thời gian nghỉ:</label>
+                <input name="time" type="number">
+            </div>
+
+            <button type="submit">
+                Bắt đầu
+            </button>
+        </div>
+    </form>
+</div>
